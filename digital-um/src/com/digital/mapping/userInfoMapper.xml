@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digital.dao.UserInfoDAO">
+	<select id="getUserInfoByCond" parameterType="com.digital.pojo.UserInfo"
+		resultType="com.digital.pojo.UserInfo">
+		select * from user_info where userName=#{userName} and
+		password=#{password}
+	</select>
+
+	<select id="getUserListByPage" parameterType="java.util.Map"
+		resultType="com.digital.pojo.UserInfo">
+		<if test="userName!=null and userName!=''">
+			select * from user_info where userName LIKE
+			CONCAT(CONCAT('%',#{userName}),'%') limit #{start},#{limit}
+		</if>
+		<if test="userName==null or userName==''">
+			select * from user_info limit #{start},#{limit}
+		</if>
+	</select>
+
+	<select id="getAllUser" parameterType="String"
+		resultType="com.digital.pojo.UserInfo">
+		<if test="_parameter!=null and _parameter!=''">
+			select * from user_info where userName LIKE
+			CONCAT(CONCAT('%',#{_parameter}),'%')
+		</if>
+		<if test="_parameter==null or _parameter==''">
+			select * from user_info
+		</if>
+	</select>
+
+	<select id="updateUserStatus" parameterType="java.util.Map">
+	    <if test="flag==0">
+	    	update user_info set status=0 where id in
+	    </if>
+	    <if test="flag==1">
+	    	update user_info set status=1 where id in
+	    </if>		
+		<foreach item="item" index="index" collection="ids" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+		
+	</select>
+
+
+</mapper>

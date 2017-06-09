@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digital.dao.PowersDAO">
+	
+	<select parameterType="int" id="delPowersByAdminid">
+		delete from Powers where aid=#{aid}
+	</select>
+	
+	<!-- 保存管理员和系统功能之间的关联关系信息  -->
+	<insert id="addPowers" parameterType="java.util.Map">
+		insert into powers(aid,fid) values(#{aid},#{fid})
+	</insert>
+	
+</mapper>

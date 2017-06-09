@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.digital.entity">
+	<class name="OrderDetail" table="order_detail" catalog="digital">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="productInfo" class="ProductInfo" fetch="select" lazy="false">
+			<column name="pid">
+				<comment>商品id</comment>
+			</column>
+		</many-to-one>
+		<many-to-one name="orderInfo" cascade="all" class="OrderInfo" fetch="select" lazy="false">
+			<column name="oid">
+				<comment>订单id</comment>
+			</column>
+		</many-to-one>
+	
+		<property name="num" type="java.lang.Integer">
+			<column name="num" />
+		</property>
+
+		
+	</class>
+</hibernate-mapping>

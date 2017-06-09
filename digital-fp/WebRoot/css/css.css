@@ -1,0 +1,78 @@
+.clearall {zoom:1;}
+.clearall:after {content:".";display:block;clear:both;height:0;visibility:hidden;}
+*{ padding:0px; margin:0px auto;}
+img{ border:none;}
+ul,li{ padding:0px; margin:0px; list-style-type:none;}
+a{ text-decoration:none; color:#000;}
+a:hover{ color:#2f4370; text-decoration:underline;}
+em,i{ font-style:normal;}
+.fl{ float:left;}
+.fr{ float:right;}
+body{ margin:0 atuo; font-size:12px; font-family:"Î¢ÈíÑÅºÚ";  color:#565455;text-align:center;}
+.mt15{ margin-top:15px;}
+.mt10{ margin-top:10px;}
+.ah{height:auto !important;height:50px;min-height:50px;}
+.header{width:1000px; height:112px;  overflow:hidden;}
+.logo{ width:210px; height:112px;}
+.search{width:500px; height:112px; overflow:hidden; margin:0px 10px 0px 10px;}
+.search_from{ width:500px; height:36px; margin-top:36px;}
+.s_input{ width:415px; height:30px; background:#FFFFFF; border-left:#e3393c 3px solid;border-top:#e3393c 3px solid;border-bottom:#e3393c 3px solid; line-height:30px;}
+.s_botton{ width:78px; height:36px; }
+.s_hot{ width:500px; height:30px; text-align:left; line-height:30px; font-size:13px;}
+
+.hui{ color:#a5a5a5;}
+.member{ width:106px; height:32px; background:url(../images/003.jpg) no-repeat; margin:36px 5px 0px 5px; text-align:center; line-height:32px;}
+.shoppingcar{ width:126px; height:32px; background:url(../images/004.jpg) no-repeat; margin:36px 5px 0px 5px;text-align:center; line-height:32px;}
+.menu{ width:1000px; height:40px; overflow:hidden; background:#e43a3d;}
+.menu_left{ width:190px; height:40px; text-align:left; background:url(../images/007.jpg) 180px 18px no-repeat; color:#fff; font-size:14px; font-weight:bold; padding-left:20px; line-height:40px;}
+.menu_center{ width:600px; height:40px;}
+.menu_right{ width:190px; height:40px; line-height:40px; color:#fff; text-align:center;}
+.main{ width:1000px; overflow:hidden;}
+.mleft{ width:210px; background:#e43a3d; text-align:center; padding-bottom:2px;}
+.btit{ width:190px; background:#fff; text-align:left; padding-left:16px; height:40px; line-height:40px; font-size:14px; font-weight:bold;}
+.mright{ width:780px; overflow:hidden; margin-left:10px;}
+.mpro{ width:242px; height:280px; margin:20px 9px 0px 9px;}
+.mpro_tp{width:226px; height:186px; background:#e2e2e2; padding:8px;}
+.mpro_con{ width:242px; height:78px; font-size:13px;}
+.end{ width:100%; height:80px; border-top:#e43a3d 5px solid; margin-top:40px; text-align:center; line-height:30px; padding-top:10px;}
+
+.jiacu{ font-weight:bold;}
+
+.dh_topd {
+	 OVERFLOW: hidden; WIDTH:140px;HEIGHT: 40px;DISPLAY: block; font-weight:bold;margin-right:0px; margin-left:0px; float:left; color:#fff; font-size:15px; font-family:"Î¢ï¿½ï¿½ï¿½Åºï¿½"; 
+}
+.dh_topd A:link {
+	DISPLAY: block; WIDTH::140px; LINE-HEIGHT: 40px;  HEIGHT: 40px; TEXT-ALIGN: center; text-decoration:none;color:#fff;font-weight:bold; 
+}
+.dh_topd A:visited {
+	DISPLAY: block; WIDTH::140px; LINE-HEIGHT: 40px;  HEIGHT: 40px; TEXT-ALIGN: center;text-decoration:none;color:#fff;font-weight:bold; 
+}
+.dh_topd A:hover {
+	  text-decoration:none;color:#fff; WIDTH::140px; font-weight:bold; background:#a40000; 
+} 
+.dh_topd A:active {
+	DISPLAY: block; WIDTH::140px; LINE-HEIGHT: 40px;  HEIGHT:40px; TEXT-ALIGN: center;text-decoration:none;color:#fff;font-weight:bold; 
+}
+
+
+<!--LEFT-->
+.sub_left_center {
+	 OVERFLOW: hidden;  WIDTH: 206px; background:#ededed;
+}
+.sub_left_center A:link {
+	DISPLAY: block; WIDTH: 206px; LINE-HEIGHT: 30px;  HEIGHT: 30px; TEXT-ALIGN: center; text-decoration:none;background:#ededed; border-bottom:#fff 1px solid;
+}
+.sub_left_center A:visited {
+	DISPLAY: block; WIDTH: 206px; LINE-HEIGHT: 30px;  HEIGHT: 30px; TEXT-ALIGN: center;text-decoration:none;background:#ededed;border-bottom:#fff 1px solid;
+}
+.sub_left_center A:hover {
+	  COLOR: #fff;text-decoration:none; background:#e43a3d;WIDTH: 206px;
+}
+.sub_left_center A:active {
+	DISPLAY: block; WIDTH: 206px; LINE-HEIGHT: 30px; HEIGHT: 30px; TEXT-ALIGN: center;text-decoration:none;background:#ededed;border-bottom:#fff 1px solid;
+}
+<!--LEFT-->
+
+#goTopBtn {
+	POSITION: fixed; TEXT-ALIGN: center; LINE-HEIGHT: 30px; WIDTH: 30px; BOTTOM: 35px; HEIGHT: 33px; FONT-SIZE: 12px; CURSOR: pointer; RIGHT: 0px; _position: absolute; _right: auto
+}

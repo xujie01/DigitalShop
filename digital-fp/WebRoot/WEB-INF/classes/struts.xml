@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<!-- 定义一个名称为digital的包，继承struts 2的默认包，指定命名空间为"/" -->
+	<package name="digital" namespace="/" extends="struts-default">
+		
+		<!-- 配置拦截器AuthorizationInterceptor -->
+		<interceptors>
+			<interceptor name="loginCheck" class="com.digital.interceptor.AuthorizationInterceptor"></interceptor>
+		</interceptors>
+		
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		
+		<!-- 为类中的方法配置映射 -->
+		<action name="doLogin" class="uiAction" method="doLogin">
+			<result name="index" type="redirectAction">list</result>
+			<result name="login" type="redirect">login.jsp</result>
+		</action>
+		
+		<action name="list" class="piAction" method="list">
+			<result name="index">/index.jsp</result>
+		</action>
+		
+		<action name="logOut" class="uiAction" method="logOut">
+			<result name="index" type="redirectAction">list</result>
+		</action>
+		
+		<action name="show" class="piAction" method="show">
+			<result name="show">/show.jsp</result>
+		</action>
+		<action name="addtoshopcart" class="cartAction" method="addtoshopcart">
+			<result name="shopCart">/cart.jsp</result>
+			<interceptor-ref name="loginCheck"/>
+			<interceptor-ref name="defaultStack"/>
+		</action>
+		
+		<action name="updateSelectedQuantity" class="cartAction" method="updateSelectedQuantity">
+			<result name="shopCart">/cart.jsp</result>
+		</action>
+		<action name="deleteSelectedOrders" class="cartAction" method="deleteSelectedOrders">
+			<result name="shopCart">/cart.jsp</result>
+		</action>
+		<action name="clearCart" class="cartAction" method="clearCart">
+			<result name="shopCart">/cart.jsp</result>
+		</action>
+		
+		<action name="addOrderInfo" class="orderAction" method="addOrderInfo">
+			<result name="index" type="redirectAction">list</result>
+		</action>
+		
+		<!-- 得到我的订单信息 -->
+		 <action name="toMyOrderInfo" class="orderAction" method="toMyOrderInfo">
+		 	<result name="myOrderInfo">/myorder.jsp</result>
+		 </action>
+		<!-- 得到详细订单列表 -->
+		<action name="toOrderDetail" class="orderAction" method="toOrderDetail">
+			<result name="toOrderDetail">/myorderdetail.jsp</result>
+		</action> 
+		
+		<!-- 删除指定订单 -->
+		<action name="deleteOrderInfo" class="orderAction" method="deleteOrderInfo">
+			<result name="myOrderInfo" type="redirectAction">toMyOrderInfo</result>
+		</action>
+		
+	</package>
+</struts>    

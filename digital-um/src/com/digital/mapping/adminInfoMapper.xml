@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digital.dao.AdminInfoDAO">
+	<select id="getAdminInfoByCond" parameterType="com.digital.pojo.AdminInfo" resultType="com.digital.pojo.AdminInfo">
+		select * from admin_info where name=#{name} and pwd=#{pwd}
+	</select>
+	 <!--  加载AdminInfo对象及关联的Functions对象集合 -->
+	<select id="getAdminInfoFunctions" parameterType="int" resultMap="getAdminInfoFunctionsMap">
+		select ai.id,ai.name,f.id fuid,f.name fname, f.parentid fpid, f.isleaf fisleaf, f.nodeorder fno from admin_info
+		ai left join powers p on ai.id=p.aid left join functions f on
+		p.fid=f.id where ai.id=#{id} ORDER BY fpid
+	</select>
+	<resultMap type="com.digital.pojo.AdminInfo" id="getAdminInfoFunctionsMap">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<collection property="fs" ofType="com.digital.pojo.Functions">
+			<id property="id" column="fuid" />
+			<result property="name" column="fname" />
+			<result property="parentid" column="fpid" />
+			<result property="isleaf" column="fisleaf" />
+		</collection>
+	</resultMap>	
+	<select id="getAllAdminInfo" resultType="com.digital.pojo.AdminInfo">
+		select * from admin_info
+	</select>
+	<select id="getAdminById" parameterType="int" resultType="com.digital.pojo.AdminInfo">
+		select * from admin_info where id=#{id}
+	</select>
+	<select id="addAdminInfo" parameterType="com.digital.pojo.AdminInfo">
+		insert into admin_info(name,pwd,role) values(#{name},#{pwd},#{role})
+	</select>
+</mapper>

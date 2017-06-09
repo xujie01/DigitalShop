@@ -1,0 +1,22 @@
+[{
+	"value":"Java",
+	"text":"Java",
+	"desc":"Write once, run anywhere"
+},{
+	"value":"C#",
+	"text":"C#",
+	"desc":"One of the programming languages designed for the Common Language Infrastructure"
+},{
+	"value":"µú»É",
+	"text":"µú»É",
+	"selected":true,
+	"desc":"A dynamic, reflective, general-purpose object-oriented programming language"
+},{
+	"value":"Perl",
+	"text":"Perl",
+	"desc":"A high-level, general-purpose, interpreted, dynamic programming language"
+},{
+	"value":"Basic",
+	"text":"Basic",
+	"desc":"A family of general-purpose, high-level programming languages"
+}]

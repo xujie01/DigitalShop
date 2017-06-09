@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.digital.entity">
+	<class name="OrderInfo" table="order_info" catalog="digital">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="userInfo" class="UserInfo" fetch="select" lazy="false">
+			<column name="uid">
+				<comment>用户id</comment>
+			</column>
+		</many-to-one>
+	
+		<property name="status" type="java.lang.String">
+			<column name="status" length="16"></column>
+		</property>
+		<property name="ordertime" type="java.lang.String">
+			<column name="ordertime" length="19"/>
+		</property>
+		<property name="orderprice" type="java.lang.Double">
+			<column name="orderprice" precision="8" />
+		</property>
+	
+		<!-- 添加OrderDetails的集合 -->
+		<set name="orderDetails" cascade="all" inverse="true" lazy="false">
+			<key>
+				<column name="oid">
+					<comment>订单id</comment>
+				</column>
+			</key>
+			<one-to-many class="OrderDetail"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>
